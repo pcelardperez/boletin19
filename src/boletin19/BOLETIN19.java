@@ -22,8 +22,8 @@ public class BOLETIN19 {
     ArrayList<Alumno>alumnos=new ArrayList<Alumno>();
     Alumno.introAlumno(alumnos);
     Alumno.verFor(alumnos);
-    Alumno.verForeach(alumnos);
-    Alumno.verIterator(alumnos);
+   // Alumno.verForeach(alumnos);
+    //aAlumno.verIterator(alumnos);
     Alumno.verNota(alumnos);
     Alumno.introAlumno(alumnos);
     Alumno.verFor(alumnos);

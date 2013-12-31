@@ -68,16 +68,17 @@ public class Alumno implements Comparable, List {//implemento a interface compar
         } while (saida.compareTo("0") != 0);
 
     }
-
+/*
     @Override
     public String toString() {//sobreescribo este método, para cando faga un get(i) saiaba directamente que imprimirme
         String res = (" nome: " + nome + " \tnota: " + this.getNota());//podo por a variable directamente ou con this.get..
         return res;
     }
+    */
 
     public static void verFor(ArrayList<Alumno> nomearray) {
         for (int i = 0; i < nomearray.size(); i++) {
-            System.out.println(nomearray.get(i));//podo facelo con get(i) por que sobrescribin o metodo toString
+            System.out.println(nomearray.get(i).getNome()+"\t"+nomearray.get(i).getNota());//podo facelo con get(i) por que sobrescribin o metodo toString
         }
         System.out.println("");
     }
@@ -125,16 +126,11 @@ public class Alumno implements Comparable, List {//implemento a interface compar
         //Sobrescribindo métodos (indexOf):
         posicion = nomearray.indexOf(obx);
         
-         for (Alumno i : nomearray) {
-         if (i.compareTo(obx) == 0) {
-         posicion = nomearray.indexOf(i);
-         }
-         }
-
          if (posicion == -1) {
          JOptionPane.showMessageDialog(null, "o alumno" + nom + " non está na lista");
          } else {
-        JOptionPane.showMessageDialog(null, "o alumno " + nomearray.get(posicion) + " está na lista");
+        JOptionPane.showMessageDialog(null, "o alumno " + nomearray.get(posicion) + " ELIMNINARASE");
+        nomearray.remove(posicion);
 
          }
 
@@ -183,18 +179,24 @@ public class Alumno implements Comparable, List {//implemento a interface compar
     public int indexOf(Object o) {
         Alumno al = (Alumno) o;//realizo cast para pasar obxecto tipo Object a tipo Alumno.
         int posicion = -1;
+        /*
         if (al.nome == null) {        //se o nome que introducimos é nulo, vamos a comprobar si temos algún elemento nulo
             for (int i = 0; i < this.size(); i++) {
                 if (this.get(i).getNome() == null) {
                     posicion = i;
+                    break;
                 }
             }
         } else {
-            for (int i = 0; i < this.size(); i++) {
-                if (al.nome.equalsIgnoreCase(this.get(i).getNome())) {
-                    posicion = i;
+            */
+
+        for (int i = 0; i < this.size(); i++) {
+            
+      if (this.get(i).nome.equalsIgnoreCase(al.nome) == true) {
+        posicion = i;
+                   break;
                 }
-            }
+            //}
 
         }
         return posicion;
