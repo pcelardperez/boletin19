@@ -28,7 +28,6 @@ public class BOLETIN19 {
     Alumno.introAlumno(alumnos);
     Alumno.verFor(alumnos);
     Alumno.borraAlumno(alumnos);
-    Alumno.borraAlumnob(alumnos);
     Alumno.verFor(alumnos);
     Alumno.consultaAlumno(alumnos);
     Alumno.ordear(alumnos);

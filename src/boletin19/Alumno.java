@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.ListIterator;
 import javax.swing.JOptionPane;
 
-public class Alumno implements Comparable, List {//implemento a interface comparable para poder sobreescribilo metodo compareTo
+public class Alumno implements Comparable {//implemento a interface comparable para poder sobreescribilo metodo compareTo
 
     private String nome;
     private int nota;
@@ -122,22 +122,6 @@ public class Alumno implements Comparable, List {//implemento a interface compar
         String nom = JOptionPane.showInputDialog("Introduce nome do alumno que queres eliminar");
         Alumno obx = new Alumno(nom, 0);//creo un obxecto para que poida ser comparado
 
-        //Sobrescribindo métodos (indexOf):
-        //posicion = nomearray.indexOf(obx);
-        
-         for (Alumno i : nomearray) {
-         if (i.compareTo(obx) == 0) {
-         posicion = nomearray.indexOf(i);
-         }
-         }
-
-         if (posicion == -1) {
-         JOptionPane.showMessageDialog(null, "o alumno" + nom + " non está na lista");
-         } else {
-        JOptionPane.showMessageDialog(null, "o alumno " + nomearray.get(posicion) + " está na lista");
-
-         }
-
         //Sin métodos sobrescritos
          for (Alumno i : nomearray) {
          if (i.compareTo(obx) == 0) {
@@ -160,39 +144,11 @@ public class Alumno implements Comparable, List {//implemento a interface compar
     public static void ordear(ArrayList<Alumno> nomearray) {
         Collections.sort(nomearray);
     }
-    public static void borraAlumnob(ArrayList<Alumno> nomearray) {
-        int posicion = -1;
-        String nom = JOptionPane.showInputDialog("Introduce nome do alumno que queres saber se estádddddd");
-        Alumno obx = new Alumno(nom, 0);//creo un obxecto para que poida ser comparado
-        
-        //sobrescribindo métodos - contains:
-      //  System.out.println(nomearray.contains(obx));
-        
-        //Sin  sobreescribir metodos
-        
-         for (Alumno i : nomearray) {
-         if (i.compareTo(obx) == 0) {
-         posicion = nomearray.indexOf(i);
-         }
-         }
-
-         if (posicion == -1) {
-         JOptionPane.showMessageDialog(null, "o alumno" + nom + " non está na lista");
-         } else {
-        JOptionPane.showMessageDialog(null, "o alumno " + nomearray.get(posicion) + " está na lista");
-
-         }
-
-    }
+  
     public static void consultaAlumno(ArrayList<Alumno> nomearray) {
         int posicion = -1;
         String nom = JOptionPane.showInputDialog("Introduce nome do alumno que queres saber se está");
         Alumno obx = new Alumno(nom, 0);//creo un obxecto para que poida ser comparado
-        
-        //sobrescribindo métodos - contains:
-      //  System.out.println(nomearray.contains(obx));
-        
-        //Sin  sobreescribir metodos
         
          for (Alumno i : nomearray) {
          if (i.compareTo(obx) == 0) {
@@ -223,168 +179,9 @@ public class Alumno implements Comparable, List {//implemento a interface compar
         }
     }
 
-    /*
-     @Override
-     public int compareTo(Alumno o) {
-     if (this.nome.compareToIgnoreCase(o.nome) == 0) {
-     return 0;
-     } else if (this.nome.compareToIgnoreCase(o.nome) > 0) {
-     return 1;
-     } else {
-     return -1;
-     }
 
-     }
-  
-     */
     //http://grepcode.com/file/repository.grepcode.com/java/root/jdk/openjdk/6-b14/java/util/Arrays.java#Arrays.ArrayList
 //ver página para ver como extender array ArrayList
-    @Override
-    public int indexOf(Object o) {
-        Alumno al = (Alumno) o;//realizo cast para pasar obxecto tipo Object a tipo Alumno.
-        int posicion = -1;
-        if (al.nome == null) {        //se o nome que introducimos é nulo, vamos a comprobar si temos algún elemento nulo
-            for (int i = 0; i < this.size(); i++) {
-                if (this.get(i).getNome() == null) {
-                    posicion = i;
-                }
-            }
-        } else {
-            for (int i = 0; i < this.size(); i++) {
-                if (al.nome.equalsIgnoreCase(this.get(i).getNome())) {
-                    posicion = i;
-                }
-            }
+  
 
-        }
-        return posicion;
-
-    }
-
-    @Override
-    public boolean contains(Object o) {
-        Alumno al = (Alumno) o;//fago cast para pasar obxecto tipo Object a tipo Alumno
-        return indexOf(al) != -1;
-    }
-
-    @Override
-    public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean isEmpty() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Iterator<Alumno> iterator() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Object[] toArray() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-
-
-    @Override
-    public boolean remove(Object o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-
-
-    @Override
-    public void clear() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Alumno get(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-
-    @Override
-    public Alumno remove(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int lastIndexOf(Object o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public ListIterator<Alumno> listIterator() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public ListIterator<Alumno> listIterator(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Alumno> subList(int i, int i1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    /*
-     @Override
-     public boolean contains(Object o) {
-     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-     }
-
-     @Override
-     public int indexOf(Object o) {
-     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-     }
-     * */
-
-    @Override
-    public Object[] toArray(Object[] ts) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean add(Object e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean containsAll(Collection clctn) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean addAll(Collection clctn) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean addAll(int i, Collection clctn) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean removeAll(Collection clctn) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean retainAll(Collection clctn) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Object set(int i, Object e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void add(int i, Object e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
