@@ -123,7 +123,7 @@ public class Alumno implements Comparable, List {//implemento a interface compar
         Alumno obx = new Alumno(nom, 0);//creo un obxecto para que poida ser comparado
 
         //Sobrescribindo métodos (indexOf):
-        //posicion = nomearray.indexOf(obx);
+        posicion = nomearray.indexOf(obx);
         
          for (Alumno i : nomearray) {
          if (i.compareTo(obx) == 0) {
@@ -138,69 +138,21 @@ public class Alumno implements Comparable, List {//implemento a interface compar
 
          }
 
-        //Sin métodos sobrescritos
-         for (Alumno i : nomearray) {
-         if (i.compareTo(obx) == 0) {
-         posicion = nomearray.indexOf(i);
-         }
-         }
-         
-
-        if (posicion == -1) {
-            JOptionPane.showMessageDialog(null, "o alumno" + nom + " non está na lista");
-        } else {
-            nomearray.remove(posicion);
-            JOptionPane.showMessageDialog(null, "o alumno " + nom + " foi borrado");
-
-  
-        }
+      
 
     }
 
     public static void ordear(ArrayList<Alumno> nomearray) {
         Collections.sort(nomearray);
     }
-    public static void borraAlumnob(ArrayList<Alumno> nomearray) {
-        int posicion = -1;
-        String nom = JOptionPane.showInputDialog("Introduce nome do alumno que queres saber se estádddddd");
-        Alumno obx = new Alumno(nom, 0);//creo un obxecto para que poida ser comparado
-        
-        //sobrescribindo métodos - contains:
-      //  System.out.println(nomearray.contains(obx));
-        
-        //Sin  sobreescribir metodos
-        
-         for (Alumno i : nomearray) {
-         if (i.compareTo(obx) == 0) {
-         posicion = nomearray.indexOf(i);
-         }
-         }
+  
 
-         if (posicion == -1) {
-         JOptionPane.showMessageDialog(null, "o alumno" + nom + " non está na lista");
-         } else {
-        JOptionPane.showMessageDialog(null, "o alumno " + nomearray.get(posicion) + " está na lista");
-
-         }
-
-    }
     public static void consultaAlumno(ArrayList<Alumno> nomearray) {
         int posicion = -1;
         String nom = JOptionPane.showInputDialog("Introduce nome do alumno que queres saber se está");
         Alumno obx = new Alumno(nom, 0);//creo un obxecto para que poida ser comparado
-        
-        //sobrescribindo métodos - contains:
-      //  System.out.println(nomearray.contains(obx));
-        
-        //Sin  sobreescribir metodos
-        
-         for (Alumno i : nomearray) {
-         if (i.compareTo(obx) == 0) {
-         posicion = nomearray.indexOf(i);
-         }
-         }
-
-         if (posicion == -1) {
+      
+         if (nomearray.contains(obx) == false) {
          JOptionPane.showMessageDialog(null, "o alumno" + nom + " non está na lista");
          } else {
         JOptionPane.showMessageDialog(null, "o alumno " + nomearray.get(posicion) + " está na lista");
@@ -223,20 +175,8 @@ public class Alumno implements Comparable, List {//implemento a interface compar
         }
     }
 
-    /*
-     @Override
-     public int compareTo(Alumno o) {
-     if (this.nome.compareToIgnoreCase(o.nome) == 0) {
-     return 0;
-     } else if (this.nome.compareToIgnoreCase(o.nome) > 0) {
-     return 1;
-     } else {
-     return -1;
-     }
-
-     }
   
-     */
+    
     //http://grepcode.com/file/repository.grepcode.com/java/root/jdk/openjdk/6-b14/java/util/Arrays.java#Arrays.ArrayList
 //ver página para ver como extender array ArrayList
     @Override
@@ -331,18 +271,7 @@ public class Alumno implements Comparable, List {//implemento a interface compar
     public List<Alumno> subList(int i, int i1) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    /*
-     @Override
-     public boolean contains(Object o) {
-     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-     }
-
-     @Override
-     public int indexOf(Object o) {
-     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-     }
-     * */
-
+   
     @Override
     public Object[] toArray(Object[] ts) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
