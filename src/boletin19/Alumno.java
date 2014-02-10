@@ -124,7 +124,7 @@ public class Alumno implements Comparable {//implemento a interface comparable p
 
         //Sin métodos sobrescritos
          for (Alumno i : nomearray) {
-         if (i.compareTo(obx) == 0) {
+         if (i.compareTo(obx) == 0) {//podo facelo así por que teño o método comapareTO sobreescrito
          posicion = nomearray.indexOf(i);
          }
          }
@@ -142,7 +142,8 @@ public class Alumno implements Comparable {//implemento a interface comparable p
     }
 
     public static void ordear(ArrayList<Alumno> nomearray) {
-        Collections.sort(nomearray);
+        Collections.sort(nomearray);//Como tenemos sobreescrito el compareTo-->ya ordena por nombre.
+ 
     }
   
     public static void consultaAlumno(ArrayList<Alumno> nomearray) {
