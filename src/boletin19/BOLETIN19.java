@@ -16,8 +16,17 @@ package boletin19;
 
 import java.util.ArrayList;
 
+/**
+ * 
+ * @author pcelardperez
+ * @version 1.0 13/3/2014
+ */
 public class BOLETIN19 {
 
+    /**
+     * Llamadas a los metodos de la clase Alumno
+     * @param args 
+     */
     public static void main(String[] args) {
     ArrayList<Alumno>alumnos=new ArrayList<Alumno>();
     Alumno.introAlumno(alumnos);

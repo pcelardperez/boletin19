@@ -9,6 +9,11 @@ import java.util.List;
 import java.util.ListIterator;
 import javax.swing.JOptionPane;
 
+/**
+ * 
+ * @author pcelardperez
+ */
+
 public class Alumno implements Comparable {//implemento a interface comparable para poder sobreescribilo metodo compareTo
 
     private String nome;
@@ -50,6 +55,10 @@ public class Alumno implements Comparable {//implemento a interface comparable p
         this.nota = nota;
     }
 
+    /**
+     * Introducimos un alumno
+     * @param nomearray 
+     */
     public static void introAlumno(ArrayList<Alumno> nomearray) {
         int not;
         String nom;
@@ -69,12 +78,20 @@ public class Alumno implements Comparable {//implemento a interface comparable p
 
     }
 
+    /**
+     * Retornamos lo que tiene dentro cada posición para mostrarlo por pantalla al hacer get(i)
+     * @return res 
+     */
     @Override
     public String toString() {//sobreescribo este método, para cando faga un get(i) saiaba directamente que imprimirme
         String res = (" nome: " + nome + " \tnota: " + this.getNota());//podo por a variable directamente ou con this.get..
         return res;
     }
 
+    /**
+     * vemos el contenido del ArrayList con un bucle for
+     * @param nomearray 
+     */
     public static void verFor(ArrayList<Alumno> nomearray) {
         for (int i = 0; i < nomearray.size(); i++) {
             System.out.println(nomearray.get(i));//podo facelo con get(i) por que sobrescribin o metodo toString
@@ -82,6 +99,10 @@ public class Alumno implements Comparable {//implemento a interface comparable p
         System.out.println("");
     }
 
+    /**
+     * Vemos el contenido del ArrayList con un bucle Foreach
+     * @param nomearray 
+     */
     public static void verForeach(ArrayList<Alumno> nomearray) {
         //System.out.println("nome \tnota");//formateo se non sobreescribise toString
         for (Alumno i : nomearray) {
@@ -91,6 +112,10 @@ public class Alumno implements Comparable {//implemento a interface comparable p
         System.out.println("");
     }
 
+    /**
+     * Vemos el contenido del ArrayList con un Iterator
+     * @param nomearray 
+     */
     public static void verIterator(ArrayList<Alumno> nomearray) {
         Iterator it = nomearray.iterator(); //crease iterador it para o noso arraylist
         while (it.hasNext()) //mentras queden elementos
@@ -100,6 +125,10 @@ public class Alumno implements Comparable {//implemento a interface comparable p
         System.out.println("");
     }
 
+    /**
+     * Vemos la nota de un alumno en concreto introduciendo su nombre
+     * @param nomearray 
+     */
     public static void verNota(ArrayList<Alumno> nomearray) {
         int posicion = -1;
         do {
@@ -117,6 +146,10 @@ public class Alumno implements Comparable {//implemento a interface comparable p
         //JOptionPane.showMessageDialog(null, "a nota do alumno é " + nomearray.get(posicion).getNota());//o que poria se non sobreescribise o metodo toString
     }
 
+    /**
+     * Borramos un alumno en concreto del ArrayList introduciendo su nombre
+     * @param nomearray 
+     */
     public static void borraAlumno(ArrayList<Alumno> nomearray) {
         int posicion = -1;
         String nom = JOptionPane.showInputDialog("Introduce nome do alumno que queres eliminar");
@@ -141,11 +174,19 @@ public class Alumno implements Comparable {//implemento a interface comparable p
 
     }
 
+    /**
+     * Ordenamos el ArrayList por nombre
+     * @param nomearray 
+     */
     public static void ordear(ArrayList<Alumno> nomearray) {
         Collections.sort(nomearray);//Como tenemos sobreescrito el compareTo-->ya ordena por nombre.
  
     }
   
+    /**
+     * Consultamos si un alumno está en la lista
+     * @param nomearray 
+     */
     public static void consultaAlumno(ArrayList<Alumno> nomearray) {
         int posicion = -1;
         String nom = JOptionPane.showInputDialog("Introduce nome do alumno que queres saber se está");
@@ -166,6 +207,11 @@ public class Alumno implements Comparable {//implemento a interface comparable p
 
     }
 
+    /**
+     * Sobreescribimos el metodo compareTo para comparar el objeto
+     * @param o
+     * @return 
+     */
     @Override
     public int compareTo(Object o) {//sobreescribo o metodo compare to para que sepa como ten que comparar o obxecto
         Alumno al = (Alumno) o;//fago cast por que recibo un obxecto tipo obxect-->teño que pasalo a miña clase (alumno)
